@@ -1,0 +1,41 @@
+{
+  "name": "jest-cycle-001",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node ./setup.mjs",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "postcss": "^8.4.49"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "lib/**/*.{js,mjs}",
+      "!lib/**/{__tests__,testUtils}/**/*.{js,mjs}"
+    ],
+    "coverageDirectory": "./.coverage/",
+    "coverageProvider": "v8",
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "testEnvironment": "node",
+    "testRegex": ".*\\.test\\.mjs$"
+  }
+}
